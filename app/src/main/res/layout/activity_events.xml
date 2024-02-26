@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsActivity">
+    tools:context=".MainActivity">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -19,6 +19,7 @@
         app:layout_constraintVertical_bias="1"
         android:contentDescription="Add Event"
         tools:layout_editor_absoluteX="330dp"
-        tools:layout_editor_absoluteY="660dp" />
+        tools:layout_editor_absoluteY="660dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/eventsActivity"
-        android:name="com.example.lifebook_android.EventsActivity"
+        android:name="com.example.lifebook_android.MainActivity"
         android:label="activity_events"
         tools:layout="@layout/activity_events" />
     <activity
