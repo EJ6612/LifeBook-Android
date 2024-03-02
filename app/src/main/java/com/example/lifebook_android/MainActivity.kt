@@ -1,5 +1,6 @@
 package com.example.lifebook_android
 
+import LifeEvent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.ComponentActivity
@@ -13,11 +14,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.lifebook_android.ui.theme.LifeBookAndroidTheme
 import java.io.FileOutputStream
-
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.File
+import java.io.FileReader
+import java.io.FileWriter
 class MainActivity : ComponentActivity() {
 
     companion object {
-        val FILE_NAME = "lifeBook.txt"
+        val FILE_NAME = "lifeBook.json"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,25 +38,40 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
-
-    fun saveNewEvent(v: View) {
-        var testData = "TEST"
-
-        try {
-            FileOutputStream(FILE_NAME).use {
-                    stream -> stream.write(testData.toByteArray())
-                println("Saved to file")
-            }
-        }
-        catch (e: Exception) {
-            println("Problem saving to file")
-        }
-
+    private fun loadEvents(): List<LifeEvent> {
+        // Return a default or empty list of events for now
+        return emptyList()
     }
 
-    fun loadCurrentEvents(v: View) {
+    fun saveNewEvent(event: LifeEvent) {
+        try {
+            val events = loadEvents().toMutableList()
+            events.add(event)
 
+            val json = Gson().toJson(events)
+            FileWriter(File(filesDir, FILE_NAME)).use { it.write(json) }
+
+            println("Event saved successfully")
+        } catch (e: Exception) {
+            println("Problem saving event: ${e.message}")
+        }
+    }
+
+
+    fun loadCurrentEvents(v: View): List<LifeEvent> {
+        val file = File(filesDir, FILE_NAME)
+        if (!file.exists()) {
+            return emptyList()
+        }
+
+        return try {
+            val reader = FileReader(file)
+            val eventType = object : TypeToken<List<LifeEvent>>() {}.type
+            Gson().fromJson(reader, eventType)
+        } catch (e: Exception) {
+            println("Error loading events: ${e.message}")
+            emptyList()
+        }
     }
 }
 
