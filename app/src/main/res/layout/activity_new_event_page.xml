@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Event Name"
+        android:hint="Event Name"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="92dp" />
 
@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Date"
         android:inputType="date"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="167dp" />
@@ -42,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Time"
         android:inputType="time"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="239dp" />
@@ -52,7 +54,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Location"
+        android:hint="Location"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="317dp" />
 

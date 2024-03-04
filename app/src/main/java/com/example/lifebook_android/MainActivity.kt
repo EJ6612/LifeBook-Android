@@ -19,7 +19,7 @@ import com.google.gson.reflect.TypeToken
 import java.io.File
 import java.io.FileReader
 import java.io.FileWriter
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity(){
 
     companion object {
         val FILE_NAME = "lifeBook.json"
