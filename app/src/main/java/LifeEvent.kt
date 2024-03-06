@@ -11,11 +11,6 @@ open class LifeEvent {
     var eventLocation: String = ""
         get() = field
         set(value) { field = value }
-
-    var taskList: MutableList<LifeEvent> = mutableListOf()
-    fun saveEvent(newTask: LifeEvent) {
-        taskList.add(newTask)
-    }
 }
 
 // properties -> info
