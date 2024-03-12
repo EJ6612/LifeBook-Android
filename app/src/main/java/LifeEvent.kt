@@ -1,4 +1,5 @@
-open class LifeEvent {
+open class LifeEvent// Secondary constructor body
+    (eventName: String, eventDate: String, eventDetails: String, eventLocation: String) {
     var eventName: String = ""
         get() = field
         set(value) { field = value }
@@ -11,6 +12,9 @@ open class LifeEvent {
     var eventLocation: String = ""
         get() = field
         set(value) { field = value }
+
+
+
 }
 
 // properties -> info
