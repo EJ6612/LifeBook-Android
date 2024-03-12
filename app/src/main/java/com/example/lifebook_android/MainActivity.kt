@@ -19,6 +19,8 @@ import com.google.gson.reflect.TypeToken
 import java.io.File
 import java.io.FileReader
 import java.io.FileWriter
+import android.widget.Button
+
 class MainActivity : ComponentActivity(){
 
     companion object {
@@ -34,6 +36,22 @@ class MainActivity : ComponentActivity(){
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("Android")
+                }
+                setContentView(R.layout.activity_new_event_page) // Set your XML layout here
+
+                val saveButton = findViewById<Button>(R.id.button) // Replace button_save with your actual button ID from XML
+
+                saveButton.setOnClickListener {
+                    // Here you handle the click event of the button
+                    // You can extract information from your views and save it
+                    val eventName = "Sample Event" // You can get this from a text field
+                    val eventDescription = "Sample Description" // You can get this from a text field
+
+                    // Create a new LifeEvent instance with the extracted information
+//                        val newEvent = LifeEvent(eventName, eventDescription)
+
+                    // Call your function to save the new event
+//                        saveNewEvent(newEvent)
                 }
             }
         }
