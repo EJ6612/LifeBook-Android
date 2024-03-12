@@ -20,6 +20,7 @@ import java.io.File
 import java.io.FileReader
 import java.io.FileWriter
 import android.widget.Button
+import android.widget.EditText
 
 class MainActivity : ComponentActivity(){
 
@@ -41,14 +42,17 @@ class MainActivity : ComponentActivity(){
 
                 val saveButton = findViewById<Button>(R.id.button) // Replace button_save with your actual button ID from XML
 
+
                 saveButton.setOnClickListener {
                     // Here you handle the click event of the button
                     // You can extract information from your views and save it
-                    val eventName = "Sample Event" // You can get this from a text field
-                    val eventDescription = "Sample Description" // You can get this from a text field
+                    val eventName = findViewById<EditText>(R.id.editTextText)
+                    val date = findViewById<EditText>(R.id.editTextDate)
+                    val time = findViewById<EditText>(R.id.editTextTime)
+                    val location = findViewById<EditText>(R.id.editTextText2)
 
                     // Create a new LifeEvent instance with the extracted information
-//                        val newEvent = LifeEvent(eventName, eventDescription)
+//                        val newEvent = LifeEvent(eventName, date, time, location)
 
                     // Call your function to save the new event
 //                        saveNewEvent(newEvent)
