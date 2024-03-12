@@ -1,5 +1,6 @@
 package com.example.lifebook_android
 
+import EventList
 import LifeEvent
 import android.os.Bundle
 import android.view.View
@@ -29,6 +30,7 @@ class MainActivity : ComponentActivity(){
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val eventList = EventList()
         setContent {
             LifeBookAndroidTheme {
                 // A surface container using the 'background' color from the theme
@@ -55,7 +57,7 @@ class MainActivity : ComponentActivity(){
                     val newEvent = LifeEvent(eventName, date, time, location)
 
                     // Call your function to save the new event
-//                        saveNewEvent(newEvent)
+//                        eventList.
                 }
             }
         }
