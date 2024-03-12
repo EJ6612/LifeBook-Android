@@ -62,41 +62,6 @@ class MainActivity : ComponentActivity(){
             }
         }
     }
-    private fun loadEvents(): List<LifeEvent> {
-        // Return a default or empty list of events for now
-        return emptyList()
-    }
-
-    fun saveNewEvent(event: LifeEvent) {
-        try {
-            val events = loadEvents().toMutableList()
-            events.add(event)
-
-            val json = Gson().toJson(events)
-            FileWriter(File(filesDir, FILE_NAME)).use { it.write(json) }
-
-            println("Event saved successfully")
-        } catch (e: Exception) {
-            println("Problem saving event: ${e.message}")
-        }
-    }
-
-
-    fun loadCurrentEvents(v: View): List<LifeEvent> {
-        val file = File(filesDir, FILE_NAME)
-        if (!file.exists()) {
-            return emptyList()
-        }
-
-        return try {
-            val reader = FileReader(file)
-            val eventType = object : TypeToken<List<LifeEvent>>() {}.type
-            Gson().fromJson(reader, eventType)
-        } catch (e: Exception) {
-            println("Error loading events: ${e.message}")
-            emptyList()
-        }
-    }
 }
 
 @Composable
