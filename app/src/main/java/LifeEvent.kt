@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import android.widget.EditText
+=======
+
+>>>>>>> Stashed changes
 
 open class LifeEvent// Secondary constructor body
     (eventName: EditText, eventDate: EditText, eventDetails: EditText, eventLocation: EditText) {
