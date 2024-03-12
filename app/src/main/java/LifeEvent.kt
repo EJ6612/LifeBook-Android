@@ -1,5 +1,7 @@
+import android.widget.EditText
+
 open class LifeEvent// Secondary constructor body
-    (eventName: String, eventDate: String, eventDetails: String, eventLocation: String) {
+    (eventName: EditText, eventDate: EditText, eventDetails: EditText, eventLocation: EditText) {
     var eventName: String = ""
         get() = field
         set(value) { field = value }

@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity(){
                     val location = findViewById<EditText>(R.id.editTextText2)
 
                     // Create a new LifeEvent instance with the extracted information
-//                        val newEvent = LifeEvent(eventName, date, time, location)
+                    val newEvent = LifeEvent(eventName, date, time, location)
 
                     // Call your function to save the new event
 //                        saveNewEvent(newEvent)
